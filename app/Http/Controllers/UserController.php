@@ -23,7 +23,10 @@
                 return response()->json(['error' => 'could_not_create_token'], 500);
             }
 
-            return response()->json(compact('token'));
+            $user = new User;
+            $user->access_token = $token;
+
+            return response()->json(compact('user'));
         }
 
         public function register(Request $request)
