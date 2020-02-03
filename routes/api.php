@@ -27,5 +27,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
         Route::get('user', 'UserController@getAuthenticatedUser');
         Route::get('closed', 'DataController@closed');
 
-        Route::post('all', 'PessoasController@all');
+        Route::post('pessoas/all', 'PessoasController@all');
+        Route::post('pessoas/get/{id}', 'PessoasController@get');
+        Route::post('pessoas/store', 'PessoasController@store');
+        Route::post('pessoas/update/{id}', 'PessoasController@update');
+        Route::post('pessoas/delete/{id}', 'PessoasController@destroy');
     });
